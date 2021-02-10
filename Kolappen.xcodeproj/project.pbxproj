@@ -12,13 +12,14 @@
 		73F0ECFB85A0CF8938014B2F /* Pods_KolappenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */; };
 		9F5CF40B25BB02AC00C551CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */; };
 		9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */; };
-		9F5CF40F25BB02AC00C551CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40E25BB02AC00C551CB /* ContentView.swift */; };
 		9F5CF41125BB02B000C551CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41025BB02B000C551CB /* Assets.xcassets */; };
 		9F5CF41425BB02B000C551CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41325BB02B000C551CB /* Preview Assets.xcassets */; };
 		9F5CF41725BB02B000C551CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41525BB02B000C551CB /* LaunchScreen.storyboard */; };
 		9F5CF42225BB02B100C551CB /* KolappenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF42125BB02B100C551CB /* KolappenTests.swift */; };
 		9F5CF42D25BB02B100C551CB /* KolappenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF42C25BB02B100C551CB /* KolappenUITests.swift */; };
 		ED22A2F025D3F0B000853252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */; };
+		ED22A2F525D41F4100853252 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22A2F425D41F4100853252 /* ContentView.swift */; };
+		ED22A30025D41F9100853252 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22A2FF25D41F9100853252 /* Shop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,6 @@
 		9F5CF40725BB02AC00C551CB /* Kolappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kolappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F5CF40E25BB02AC00C551CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F5CF41025BB02B000C551CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F5CF41325BB02B000C551CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F5CF41625BB02B000C551CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KolappenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F818F523AF1531462EDE7E /* Pods_Kolappen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kolappen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED22A2F425D41F4100853252 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED22A2FF25D41F9100853252 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,8 +146,9 @@
 				9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */,
 				ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */,
 				9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */,
-				9F5CF40E25BB02AC00C551CB /* ContentView.swift */,
 				9F5CF41025BB02B000C551CB /* Assets.xcassets */,
+				ED22A2F425D41F4100853252 /* ContentView.swift */,
+				ED22A2FF25D41F9100853252 /* Shop.swift */,
 				9F5CF41525BB02B000C551CB /* LaunchScreen.storyboard */,
 				9F5CF41825BB02B000C551CB /* Info.plist */,
 				9F5CF41225BB02B000C551CB /* Preview Content */,
@@ -420,7 +423,8 @@
 			files = (
 				9F5CF40B25BB02AC00C551CB /* AppDelegate.swift in Sources */,
 				9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */,
-				9F5CF40F25BB02AC00C551CB /* ContentView.swift in Sources */,
+				ED22A2F525D41F4100853252 /* ContentView.swift in Sources */,
+				ED22A30025D41F9100853252 /* Shop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
