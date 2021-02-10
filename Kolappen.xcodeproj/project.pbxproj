@@ -3,10 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4561C96B7EEB325861A230E4 /* Pods_Kolappen_KolappenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4E78D60E97B4A95244B9D6 /* Pods_Kolappen_KolappenUITests.framework */; };
+		59D16A5F257294A16A3DAF4A /* Pods_Kolappen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F818F523AF1531462EDE7E /* Pods_Kolappen.framework */; };
+		73F0ECFB85A0CF8938014B2F /* Pods_KolappenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */; };
 		9F5CF40B25BB02AC00C551CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */; };
 		9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */; };
 		9F5CF40F25BB02AC00C551CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40E25BB02AC00C551CB /* ContentView.swift */; };
@@ -15,6 +18,7 @@
 		9F5CF41725BB02B000C551CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41525BB02B000C551CB /* LaunchScreen.storyboard */; };
 		9F5CF42225BB02B100C551CB /* KolappenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF42125BB02B100C551CB /* KolappenTests.swift */; };
 		9F5CF42D25BB02B100C551CB /* KolappenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF42C25BB02B100C551CB /* KolappenUITests.swift */; };
+		ED22A2F025D3F0B000853252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0403CF3250A762D16604C0B1 /* Pods-Kolappen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kolappen.debug.xcconfig"; path = "Target Support Files/Pods-Kolappen/Pods-Kolappen.debug.xcconfig"; sourceTree = "<group>"; };
+		0F4E78D60E97B4A95244B9D6 /* Pods_Kolappen_KolappenUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kolappen_KolappenUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14A44A7445CE9FF185904A1F /* Pods-Kolappen-KolappenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kolappen-KolappenUITests.release.xcconfig"; path = "Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7FF1282E3EAF915741CCBA1E /* Pods-Kolappen-KolappenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kolappen-KolappenUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		92AADA9664FF2ACF4F1E3850 /* Pods-KolappenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KolappenTests.debug.xcconfig"; path = "Target Support Files/Pods-KolappenTests/Pods-KolappenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9F5CF40725BB02AC00C551CB /* Kolappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kolappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		9F5CF42825BB02B100C551CB /* KolappenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KolappenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5CF42C25BB02B100C551CB /* KolappenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KolappenUITests.swift; sourceTree = "<group>"; };
 		9F5CF42E25BB02B100C551CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A85A3235AFB956EF0C16491E /* Pods-Kolappen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kolappen.release.xcconfig"; path = "Target Support Files/Pods-Kolappen/Pods-Kolappen.release.xcconfig"; sourceTree = "<group>"; };
+		E26320F750237ABD847AA525 /* Pods-KolappenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KolappenTests.release.xcconfig"; path = "Target Support Files/Pods-KolappenTests/Pods-KolappenTests.release.xcconfig"; sourceTree = "<group>"; };
+		E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KolappenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9F818F523AF1531462EDE7E /* Pods_Kolappen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kolappen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59D16A5F257294A16A3DAF4A /* Pods_Kolappen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F0ECFB85A0CF8938014B2F /* Pods_KolappenTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4561C96B7EEB325861A230E4 /* Pods_Kolappen_KolappenUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3704EAD836D3D769B2F3BF03 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9F818F523AF1531462EDE7E /* Pods_Kolappen.framework */,
+				0F4E78D60E97B4A95244B9D6 /* Pods_Kolappen_KolappenUITests.framework */,
+				E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50A3D60F9193545AC76F76D0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0403CF3250A762D16604C0B1 /* Pods-Kolappen.debug.xcconfig */,
+				A85A3235AFB956EF0C16491E /* Pods-Kolappen.release.xcconfig */,
+				7FF1282E3EAF915741CCBA1E /* Pods-Kolappen-KolappenUITests.debug.xcconfig */,
+				14A44A7445CE9FF185904A1F /* Pods-Kolappen-KolappenUITests.release.xcconfig */,
+				92AADA9664FF2ACF4F1E3850 /* Pods-KolappenTests.debug.xcconfig */,
+				E26320F750237ABD847AA525 /* Pods-KolappenTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9F5CF3FE25BB02AC00C551CB = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +123,8 @@
 				9F5CF42025BB02B100C551CB /* KolappenTests */,
 				9F5CF42B25BB02B100C551CB /* KolappenUITests */,
 				9F5CF40825BB02AC00C551CB /* Products */,
+				50A3D60F9193545AC76F76D0 /* Pods */,
+				3704EAD836D3D769B2F3BF03 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */,
+				ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */,
 				9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */,
 				9F5CF40E25BB02AC00C551CB /* ContentView.swift */,
 				9F5CF41025BB02B000C551CB /* Assets.xcassets */,
@@ -143,9 +186,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F5CF43125BB02B100C551CB /* Build configuration list for PBXNativeTarget "Kolappen" */;
 			buildPhases = (
+				219BFF4845B92E9460C3BC70 /* [CP] Check Pods Manifest.lock */,
 				9F5CF40325BB02AC00C551CB /* Sources */,
 				9F5CF40425BB02AC00C551CB /* Frameworks */,
 				9F5CF40525BB02AC00C551CB /* Resources */,
+				2B71B374DBD057DA0CA1234F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +205,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F5CF43425BB02B100C551CB /* Build configuration list for PBXNativeTarget "KolappenTests" */;
 			buildPhases = (
+				B67F67DCBF7F733F2B92D462 /* [CP] Check Pods Manifest.lock */,
 				9F5CF41925BB02B100C551CB /* Sources */,
 				9F5CF41A25BB02B100C551CB /* Frameworks */,
 				9F5CF41B25BB02B100C551CB /* Resources */,
@@ -178,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9F5CF43725BB02B100C551CB /* Build configuration list for PBXNativeTarget "KolappenUITests" */;
 			buildPhases = (
+				5AB699BF72620146A93B1F69 /* [CP] Check Pods Manifest.lock */,
 				9F5CF42425BB02B100C551CB /* Sources */,
 				9F5CF42525BB02B100C551CB /* Frameworks */,
 				9F5CF42625BB02B100C551CB /* Resources */,
+				F2A433E487822C0F67ED6DE1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5CF41725BB02B000C551CB /* LaunchScreen.storyboard in Resources */,
+				ED22A2F025D3F0B000853252 /* GoogleService-Info.plist in Resources */,
 				9F5CF41425BB02B000C551CB /* Preview Assets.xcassets in Resources */,
 				9F5CF41125BB02B000C551CB /* Assets.xcassets in Resources */,
 			);
@@ -260,6 +309,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		219BFF4845B92E9460C3BC70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kolappen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B71B374DBD057DA0CA1234F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kolappen/Pods-Kolappen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kolappen/Pods-Kolappen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kolappen/Pods-Kolappen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AB699BF72620146A93B1F69 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kolappen-KolappenUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B67F67DCBF7F733F2B92D462 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KolappenTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2A433E487822C0F67ED6DE1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9F5CF40325BB02AC00C551CB /* Sources */ = {
@@ -433,6 +585,7 @@
 		};
 		9F5CF43225BB02B100C551CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0403CF3250A762D16604C0B1 /* Pods-Kolappen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -454,6 +607,7 @@
 		};
 		9F5CF43325BB02B100C551CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A85A3235AFB956EF0C16491E /* Pods-Kolappen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -475,6 +629,7 @@
 		};
 		9F5CF43525BB02B100C551CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92AADA9664FF2ACF4F1E3850 /* Pods-KolappenTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -497,6 +652,7 @@
 		};
 		9F5CF43625BB02B100C551CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E26320F750237ABD847AA525 /* Pods-KolappenTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -519,6 +675,7 @@
 		};
 		9F5CF43825BB02B100C551CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FF1282E3EAF915741CCBA1E /* Pods-Kolappen-KolappenUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -539,6 +696,7 @@
 		};
 		9F5CF43925BB02B100C551CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 14A44A7445CE9FF185904A1F /* Pods-Kolappen-KolappenUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
