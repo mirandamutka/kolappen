@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>711387171406-ub7i1bnj81i8vvvjd6sj234g3l4cdfks.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.711387171406-ub7i1bnj81i8vvvjd6sj234g3l4cdfks</string>
+	<key>API_KEY</key>
+	<string>AIzaSyApWecMrYyp0NmGe3X3BnvKHmAiabmR8TA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>711387171406</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>kolappen</string>
+	<key>PROJECT_ID</key>
+	<string>kolappen-bd97d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kolappen-bd97d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:711387171406:ios:0d5af7b53b919cdd97911f</string>
+</dict>
+</plist>
