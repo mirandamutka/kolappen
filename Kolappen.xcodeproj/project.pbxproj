@@ -15,6 +15,7 @@
 		9F33116625DA9A57009E4985 /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33116525DA9A57009E4985 /* QrCodeCameraDelegate.swift */; };
 		9F33116B25DA9C24009E4985 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33116A25DA9C24009E4985 /* CameraPreview.swift */; };
 		9F33117325DA9EDE009E4985 /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33117225DA9EDE009E4985 /* QrCodeScannerView.swift */; };
+		9F3311C825DBD82A009E4985 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3311C725DBD82A009E4985 /* LandingView.swift */; };
 		9F5CF40B25BB02AC00C551CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */; };
 		9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */; };
 		9F5CF41125BB02B000C551CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41025BB02B000C551CB /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		9F33116525DA9A57009E4985 /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
 		9F33116A25DA9C24009E4985 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
 		9F33117225DA9EDE009E4985 /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
+		9F3311C725DBD82A009E4985 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		9F5CF40725BB02AC00C551CB /* Kolappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kolappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				9F33115525DA928E009E4985 /* QrScanView.swift */,
 				9F33116A25DA9C24009E4985 /* CameraPreview.swift */,
 				9F33117225DA9EDE009E4985 /* QrCodeScannerView.swift */,
+				9F3311C725DBD82A009E4985 /* LandingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				9F33116625DA9A57009E4985 /* QrCodeCameraDelegate.swift in Sources */,
 				9F33117325DA9EDE009E4985 /* QrCodeScannerView.swift in Sources */,
 				9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */,
+				9F3311C825DBD82A009E4985 /* LandingView.swift in Sources */,
 				ED22A2F525D41F4100853252 /* ContentView.swift in Sources */,
 				9F33115625DA928E009E4985 /* QrScanView.swift in Sources */,
 				ED22A30025D41F9100853252 /* Shop.swift in Sources */,
