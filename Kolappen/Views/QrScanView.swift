@@ -7,12 +7,30 @@
 
 import Foundation
 import SwiftUI
+import Firebase
 
 struct QrScanView: View {
     
     @ObservedObject var viewModel = ScannerViewModel()
     
     @State var codeScanned = false
+    
+    
+    @State var shopName : String = ""
+    @State var currentQueueNumber : Int = 0
+    @State var highestQueueNumber : Int = 0
+    @State var queueLength : Int = 0
+    @State var documentId : String = ""
+    @State var myQueueNumber : Int = 0
+    
+    @State var uid : String = ""
+    
+    @State var uidWasFound = false
+    @State var hasScanned = false
+    
+    
+    
+    var db = Firestore.firestore()
     
     var scannedUid : String
 
@@ -36,42 +54,31 @@ struct QrScanView: View {
                             .lineLimit(5)
                             .padding()
                     } else {
-                        NavigationLink(
-                            destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
-                            Button(action: {
-                                navigateForward()
-                            }) {
-                                Text("Queue for \(self.viewModel.lastQrCode)")
-                            }
-                            
+                        if uidWasFound == false && hasScanned == true {
+                            Text("") //Button to rescan when QR-code is not found
+                        } else {
+                            NavigationLink(
+                                destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
+                                Button(action: {
+                                    navigateForward()
+                                }) {
+                                    Text("Ställ dig i kö till \(shopName)")
+                                }
+                                
+                                }.onAppear() {
+                                    codeWasScanned()
+                                }
                         }
+                        
                     }
                 
                 
             }
             .padding(.vertical, 20)
-//                .onAppear() {
-//                    print("status: \(codeScanned)")
-//                    while viewModel.lastQrCode != "Standby..." {
-//                        codeScanned = true
-//                        print("status: \(codeScanned)")
-//                        print(viewModel.lastQrCode)
-//                        codeScanned = false
-//                    }
-//
-//                }
-                
             
             Spacer()
             HStack {
-                Button(action: {
-                    self.viewModel.torchIsOn.toggle()
-                }, label: {
-                    Image(systemName: self.viewModel.torchIsOn ? "bolt.fill" : "bolt.slash.fill")
-                        .imageScale(.large)
-                        .foregroundColor(self.viewModel.torchIsOn ? Color.yellow : Color.blue)
-                        .padding()
-                })
+                Text("")
             }
             .background(Color("Background"))
             .cornerRadius(10)
@@ -79,6 +86,42 @@ struct QrScanView: View {
         }.padding()
             
             
+        }
+    }
+    
+    private func codeWasScanned() {
+        hasScanned = true
+        db.collection("users").addSnapshotListener() { (snapshot, error) in
+            if let error = error {
+                print("Could not read from firebase: \(error)")
+            } else {
+                for document in snapshot!.documents {
+                    
+                    let result = Result {
+                        try document.data(as: Shop.self)
+                    }
+                    
+                    switch result {
+                    case .success(let shop):
+                        if let shop = shop {
+                            uid = shop.uid
+                            
+                            if uid == self.viewModel.lastQrCode {
+                                uidWasFound = true
+                                shopName = shop.shopName
+                            }
+                            
+                            print("uidWasFound: \(uidWasFound)")
+                            
+                        } else {
+                            print("Document does not exist")
+                        }
+                    case.failure(let error):
+                        print("Error decoding item: \(error)")
+                    }
+                    
+                }
+            }
         }
     }
     
