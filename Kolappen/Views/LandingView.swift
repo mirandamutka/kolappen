@@ -18,7 +18,7 @@ struct LandingView: View {
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             Spacer()
                 NavigationLink(
-                    destination: QrScanView()) {
+                    destination: QrScanView(scannedUid: "")) {
                         Text("Skanna QR-kod")
                             .font(.system(size: 14))
                     }

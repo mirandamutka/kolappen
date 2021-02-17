@@ -18,10 +18,14 @@ struct ContentView: View {
     @State var documentId : String = ""
     @State var myQueueNumber : Int = 0
     
+    var scannedUid : String
+    
     var db = Firestore.firestore()
     
     var body: some View {
         VStack {
+            Text("\(shopName)")
+            Text("\(scannedUid)")
             Spacer()
             if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
                 Text("Det är din tur!")
@@ -72,7 +76,7 @@ struct ContentView: View {
     }
     
     private func getShop() {
-        db.collection("users").whereField("uid", isEqualTo: "5ETjBZhVKhTDGSANz173ItyGIp03").addSnapshotListener() { (snapshot, error) in
+        db.collection("users").whereField("uid", isEqualTo: scannedUid).addSnapshotListener() { (snapshot, error) in
             if let error = error {
                 print("there was an error regarding snapshot: \(error)")
             } else {

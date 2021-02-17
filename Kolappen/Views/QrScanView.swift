@@ -11,6 +11,10 @@ import SwiftUI
 struct QrScanView: View {
     
     @ObservedObject var viewModel = ScannerViewModel()
+    
+    @State var codeScanned = false
+    
+    var scannedUid : String
 
     var body: some View {
         
@@ -26,13 +30,37 @@ struct QrScanView: View {
                 
                 Text("Scanna QR-koden framför dig för att få en kölapp")
                     .font(.subheadline)
-                Text(self.viewModel.lastQrCode)
-                    .bold()
-                    .lineLimit(5)
-                    .padding()
+                    if self.viewModel.lastQrCode == "Standby..." {
+                        Text("Please scan a QR code")
+                            .bold()
+                            .lineLimit(5)
+                            .padding()
+                    } else {
+                        NavigationLink(
+                            destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
+                            Button(action: {
+                                navigateForward()
+                            }) {
+                                Text("Queue for \(self.viewModel.lastQrCode)")
+                            }
+                            
+                        }
+                    }
+                
                 
             }
             .padding(.vertical, 20)
+//                .onAppear() {
+//                    print("status: \(codeScanned)")
+//                    while viewModel.lastQrCode != "Standby..." {
+//                        codeScanned = true
+//                        print("status: \(codeScanned)")
+//                        print(viewModel.lastQrCode)
+//                        codeScanned = false
+//                    }
+//
+//                }
+                
             
             Spacer()
             HStack {
@@ -50,14 +78,20 @@ struct QrScanView: View {
             
         }.padding()
             
+            
         }
-        
     }
-
+    
+    private func navigateForward() {
+        //check if uid is valid
+        //pass along uid scanned
+        codeScanned = true
+    }
+    
 }
 
-struct QrScanView_Preview: PreviewProvider {
-    static var previews: some View {
-        QrScanView()
-    }
-}
+//struct QrScanView_Preview: PreviewProvider {
+//    static var previews: some View {
+//        QrScanView()
+//    }
+//}
