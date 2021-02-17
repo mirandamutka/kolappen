@@ -17,11 +17,8 @@ struct QrScanView: View {
     
     
     @State var shopName : String = ""
-    @State var currentQueueNumber : Int = 0
-    @State var highestQueueNumber : Int = 0
-    @State var queueLength : Int = 0
-    @State var documentId : String = ""
-    @State var myQueueNumber : Int = 0
+
+    @State var shopOpen : Bool = true
     
     @State var uid : String = ""
     
@@ -57,17 +54,22 @@ struct QrScanView: View {
                         if uidWasFound == false && hasScanned == true {
                             Text("") //Button to rescan when QR-code is not found
                         } else {
-                            NavigationLink(
-                                destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
-                                Button(action: {
-                                    navigateForward()
-                                }) {
-                                    Text("Ställ dig i kö till \(shopName)")
-                                }
-                                
-                                }.onAppear() {
-                                    codeWasScanned()
-                                }
+                            if shopOpen == false {
+                                Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                            } else {
+                                NavigationLink(
+                                    destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
+                                    Button(action: {
+                                        navigateForward()
+                                    }) {
+                                        Text("Ställ dig i kö till \(shopName)")
+                                    }
+                                    
+                                    }.onAppear() {
+                                        codeWasScanned()
+//                                        navigateForward()
+                                    }
+                            }
                         }
                         
                     }
@@ -109,6 +111,7 @@ struct QrScanView: View {
                             if uid == self.viewModel.lastQrCode {
                                 uidWasFound = true
                                 shopName = shop.shopName
+                                shopOpen = shop.shopOpen
                             }
                             
                             print("uidWasFound: \(uidWasFound)")

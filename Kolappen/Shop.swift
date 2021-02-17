@@ -11,6 +11,7 @@ import FirebaseFirestoreSwift
 struct Shop : Codable, Identifiable {
     @DocumentID var id : String?
     var shopName : String
+    var shopOpen : Bool
     var currentQueueNumber : Int
     var highestQueueNumber : Int
     var uid : String
