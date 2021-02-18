@@ -20,13 +20,17 @@ struct QrScanView: View {
 
     @State var shopOpen : Bool = true
     
+    
+    @State var currentQueueNumber : Int = 0
+    @State var highestQueueNumber : Int = 0
+    @State var queueLength : Int = 0
+    
+    
     @State var uid : String = ""
     
     @State var uidWasFound = false
     @State var hasScanned = false
-    
-    
-    
+
     var db = Firestore.firestore()
     
     var scannedUid : String
@@ -38,7 +42,7 @@ struct QrScanView: View {
                 .found(r: self.viewModel.onFoundQrCode)
                 .torchLight(isOn: self.viewModel.torchIsOn)
                 .interval(delay: self.viewModel.scanInterval)
-            
+                
             VStack {
                 
                 VStack {
@@ -46,7 +50,7 @@ struct QrScanView: View {
                 Text("Scanna QR-koden framför dig för att få en kölapp")
                     .font(.subheadline)
                     if self.viewModel.lastQrCode == "Standby..." {
-                        Text("Please scan a QR code")
+                        Text("Söker efter QR kod...")
                             .bold()
                             .lineLimit(5)
                             .padding()
@@ -56,13 +60,23 @@ struct QrScanView: View {
                         } else {
                             if shopOpen == false {
                                 Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                                //Button to rescan
                             } else {
                                 NavigationLink(
                                     destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
                                     Button(action: {
                                         navigateForward()
                                     }) {
-                                        Text("Ställ dig i kö till \(shopName)")
+                                        VStack {
+                                            Text("Nu betjänas nummer \(currentQueueNumber)")
+                                            Text("Person i kö: \(queueLength)")
+                                            Text("Ställ dig i kö till \(shopName)")
+                                                .padding()
+                                                .background(Color("Background"))
+                                        }
+                                            
+                                        
+                                        
                                     }
                                     
                                     }.onAppear() {
@@ -90,10 +104,10 @@ struct QrScanView: View {
             
         }
     }
-    
+        
     private func codeWasScanned() {
         hasScanned = true
-        db.collection("users").addSnapshotListener() { (snapshot, error) in
+        db.collection("users").getDocuments() { (snapshot, error) in
             if let error = error {
                 print("Could not read from firebase: \(error)")
             } else {
@@ -112,6 +126,10 @@ struct QrScanView: View {
                                 uidWasFound = true
                                 shopName = shop.shopName
                                 shopOpen = shop.shopOpen
+                                
+                                currentQueueNumber = shop.currentQueueNumber
+                                highestQueueNumber = shop.highestQueueNumber
+                                queueLength = highestQueueNumber - currentQueueNumber
                             }
                             
                             print("uidWasFound: \(uidWasFound)")
