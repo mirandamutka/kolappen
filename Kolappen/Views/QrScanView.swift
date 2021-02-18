@@ -69,7 +69,7 @@ struct QrScanView: View {
                                     }) {
                                         VStack {
                                             Text("Nu betjänas nummer \(currentQueueNumber)")
-                                            Text("Person i kö: \(queueLength)")
+                                            Text("Personer i kö: \(queueLength)")
                                             Text("Ställ dig i kö till \(shopName)")
                                                 .padding()
                                                 .background(Color("Background"))
