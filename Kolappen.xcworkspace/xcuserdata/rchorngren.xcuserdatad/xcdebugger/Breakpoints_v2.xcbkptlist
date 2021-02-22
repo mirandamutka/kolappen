@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "ABA02BEC-B1E1-4710-B977-B2BFFF78C267"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B742C7D3-25C3-45B7-ACE2-84EA7DD79A47"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kolappen/Views/QrScanView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B742C7D3-25C3-45B7-ACE2-84EA7DD79A47 - a1da85aab3eb571c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(Kolappen.QrCodeScannerView, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in Kolappen.QrScanView.body.getter : some"
+                  moduleName = "Kolappen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rchorngren/Swift/kolappen/Kolappen/Views/QrScanView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "1096">
+               </Location>
+               <Location
+                  uuid = "B742C7D3-25C3-45B7-ACE2-84EA7DD79A47 - 1801d0af05cad1ca"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #2 (Swift.String) -&gt; () in implicit closure #1 (Kolappen.ScannerViewModel) -&gt; (Swift.String) -&gt; () in closure #1 () -&gt; SwiftUI.TupleView&lt;(Kolappen.QrCodeScannerView, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0)&gt; in Kolappen.QrScanView.body.getter : some"
+                  moduleName = "Kolappen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rchorngren/Swift/kolappen/Kolappen/Views/QrScanView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

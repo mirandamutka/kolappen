@@ -10,15 +10,22 @@
 		4561C96B7EEB325861A230E4 /* Pods_Kolappen_KolappenUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F4E78D60E97B4A95244B9D6 /* Pods_Kolappen_KolappenUITests.framework */; };
 		59D16A5F257294A16A3DAF4A /* Pods_Kolappen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F818F523AF1531462EDE7E /* Pods_Kolappen.framework */; };
 		73F0ECFB85A0CF8938014B2F /* Pods_KolappenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */; };
+		9F33115625DA928E009E4985 /* QrScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33115525DA928E009E4985 /* QrScanView.swift */; };
+		9F33115E25DA9645009E4985 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33115D25DA9645009E4985 /* ScannerViewModel.swift */; };
+		9F33116625DA9A57009E4985 /* QrCodeCameraDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33116525DA9A57009E4985 /* QrCodeCameraDelegate.swift */; };
+		9F33116B25DA9C24009E4985 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33116A25DA9C24009E4985 /* CameraPreview.swift */; };
+		9F33117325DA9EDE009E4985 /* QrCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F33117225DA9EDE009E4985 /* QrCodeScannerView.swift */; };
+		9F3311C825DBD82A009E4985 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F3311C725DBD82A009E4985 /* LandingView.swift */; };
 		9F5CF40B25BB02AC00C551CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */; };
 		9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */; };
-		9F5CF40F25BB02AC00C551CB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF40E25BB02AC00C551CB /* ContentView.swift */; };
 		9F5CF41125BB02B000C551CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41025BB02B000C551CB /* Assets.xcassets */; };
 		9F5CF41425BB02B000C551CB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41325BB02B000C551CB /* Preview Assets.xcassets */; };
 		9F5CF41725BB02B000C551CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F5CF41525BB02B000C551CB /* LaunchScreen.storyboard */; };
 		9F5CF42225BB02B100C551CB /* KolappenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF42125BB02B100C551CB /* KolappenTests.swift */; };
 		9F5CF42D25BB02B100C551CB /* KolappenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5CF42C25BB02B100C551CB /* KolappenUITests.swift */; };
 		ED22A2F025D3F0B000853252 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */; };
+		ED22A2F525D41F4100853252 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22A2F425D41F4100853252 /* ContentView.swift */; };
+		ED22A30025D41F9100853252 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED22A2FF25D41F9100853252 /* Shop.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,10 +51,15 @@
 		14A44A7445CE9FF185904A1F /* Pods-Kolappen-KolappenUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kolappen-KolappenUITests.release.xcconfig"; path = "Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7FF1282E3EAF915741CCBA1E /* Pods-Kolappen-KolappenUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kolappen-KolappenUITests.debug.xcconfig"; path = "Target Support Files/Pods-Kolappen-KolappenUITests/Pods-Kolappen-KolappenUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92AADA9664FF2ACF4F1E3850 /* Pods-KolappenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KolappenTests.debug.xcconfig"; path = "Target Support Files/Pods-KolappenTests/Pods-KolappenTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9F33115525DA928E009E4985 /* QrScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrScanView.swift; sourceTree = "<group>"; };
+		9F33115D25DA9645009E4985 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		9F33116525DA9A57009E4985 /* QrCodeCameraDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeCameraDelegate.swift; sourceTree = "<group>"; };
+		9F33116A25DA9C24009E4985 /* CameraPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		9F33117225DA9EDE009E4985 /* QrCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QrCodeScannerView.swift; sourceTree = "<group>"; };
+		9F3311C725DBD82A009E4985 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		9F5CF40725BB02AC00C551CB /* Kolappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kolappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9F5CF40E25BB02AC00C551CB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9F5CF41025BB02B000C551CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F5CF41325BB02B000C551CB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F5CF41625BB02B000C551CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +75,8 @@
 		E94EE7516C7E649999602435 /* Pods_KolappenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KolappenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9F818F523AF1531462EDE7E /* Pods_Kolappen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kolappen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED22A2F425D41F4100853252 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		ED22A2FF25D41F9100853252 /* Shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +130,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9F33115425DA926B009E4985 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED22A2F425D41F4100853252 /* ContentView.swift */,
+				9F33115525DA928E009E4985 /* QrScanView.swift */,
+				9F33116A25DA9C24009E4985 /* CameraPreview.swift */,
+				9F33117225DA9EDE009E4985 /* QrCodeScannerView.swift */,
+				9F3311C725DBD82A009E4985 /* LandingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9F5CF3FE25BB02AC00C551CB = {
 			isa = PBXGroup;
 			children = (
@@ -141,14 +167,17 @@
 		9F5CF40925BB02AC00C551CB /* Kolappen */ = {
 			isa = PBXGroup;
 			children = (
+				9F33115425DA926B009E4985 /* Views */,
 				9F5CF40A25BB02AC00C551CB /* AppDelegate.swift */,
 				ED22A2EF25D3F0AF00853252 /* GoogleService-Info.plist */,
 				9F5CF40C25BB02AC00C551CB /* SceneDelegate.swift */,
-				9F5CF40E25BB02AC00C551CB /* ContentView.swift */,
 				9F5CF41025BB02B000C551CB /* Assets.xcassets */,
+				ED22A2FF25D41F9100853252 /* Shop.swift */,
+				9F33115D25DA9645009E4985 /* ScannerViewModel.swift */,
 				9F5CF41525BB02B000C551CB /* LaunchScreen.storyboard */,
 				9F5CF41825BB02B000C551CB /* Info.plist */,
 				9F5CF41225BB02B000C551CB /* Preview Content */,
+				9F33116525DA9A57009E4985 /* QrCodeCameraDelegate.swift */,
 			);
 			path = Kolappen;
 			sourceTree = "<group>";
@@ -419,8 +448,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F5CF40B25BB02AC00C551CB /* AppDelegate.swift in Sources */,
+				9F33116B25DA9C24009E4985 /* CameraPreview.swift in Sources */,
+				9F33115E25DA9645009E4985 /* ScannerViewModel.swift in Sources */,
+				9F33116625DA9A57009E4985 /* QrCodeCameraDelegate.swift in Sources */,
+				9F33117325DA9EDE009E4985 /* QrCodeScannerView.swift in Sources */,
 				9F5CF40D25BB02AC00C551CB /* SceneDelegate.swift in Sources */,
-				9F5CF40F25BB02AC00C551CB /* ContentView.swift in Sources */,
+				9F3311C825DBD82A009E4985 /* LandingView.swift in Sources */,
+				ED22A2F525D41F4100853252 /* ContentView.swift in Sources */,
+				9F33115625DA928E009E4985 /* QrScanView.swift in Sources */,
+				ED22A30025D41F9100853252 /* Shop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,14 +627,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Kolappen/Preview Content\"";
-				DEVELOPMENT_TEAM = FGZQ3BAQWU;
+				DEVELOPMENT_TEAM = 3UTMZHZAK8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kolappen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Kolappen;
+				PRODUCT_BUNDLE_IDENTIFIER = se.iths.au20.mirandamutka.Kolappen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -613,14 +649,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Kolappen/Preview Content\"";
-				DEVELOPMENT_TEAM = FGZQ3BAQWU;
+				DEVELOPMENT_TEAM = 3UTMZHZAK8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kolappen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.example.Kolappen;
+				PRODUCT_BUNDLE_IDENTIFIER = se.iths.au20.mirandamutka.Kolappen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
