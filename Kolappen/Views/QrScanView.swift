@@ -42,21 +42,27 @@ struct QrScanView: View {
                 .found(r: self.viewModel.onFoundQrCode)
                 .torchLight(isOn: self.viewModel.torchIsOn)
                 .interval(delay: self.viewModel.scanInterval)
+                .frame(width: 400, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .background(Color("Background"))
+                .cornerRadius(10)
+
                 
             VStack {
-                
                 VStack {
+                    Spacer()
                     if !hasScanned {
                         Text("Scanna QR-koden framför dig för att få en kölapp")
                             .foregroundColor(Color("Text"))
                             .font(.subheadline)
                     }
                     if self.viewModel.lastQrCode == "Standby..." {
+                        VStack {
                         Text("Söker efter QR kod...")
                             .bold()
                             .lineLimit(5)
                             .padding()
                             .foregroundColor(Color("Text"))
+                        }
                     } else {
                         if uidWasFound == false && hasScanned == true {
                             Text("") //Button to rescan when QR-code is not found
@@ -91,8 +97,7 @@ struct QrScanView: View {
                                                 .foregroundColor(Color("Text"))
                                                 .background(Color("Background"))
                                         }
-                                            
-                                        
+                                        .padding(.vertical, 20)
                                         
                                     }
                                     
@@ -107,19 +112,20 @@ struct QrScanView: View {
                 
                 
             }
-            .padding(.vertical, 20)
-            
+//            .padding(.vertical, 20)
+
             Spacer()
-            HStack {
-                Text("")
-            }
-            .background(Color("Background"))
-            .cornerRadius(10)
-            
-        }.padding()
+//            HStack {
+//                Text("")
+//            }
+                        
+        }
+            .padding()
             
             
         }
+        .background(Color("Background"))
+        .ignoresSafeArea()
     }
         
     private func codeWasScanned() {
