@@ -627,14 +627,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Kolappen/Preview Content\"";
-				DEVELOPMENT_TEAM = 35896GTVB6;
+				DEVELOPMENT_TEAM = 3UTMZHZAK8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kolappen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.horngren.Kolappen;
+				PRODUCT_BUNDLE_IDENTIFIER = se.iths.au20.mirandamutka.Kolappen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -649,14 +649,14 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Kolappen/Preview Content\"";
-				DEVELOPMENT_TEAM = 35896GTVB6;
+				DEVELOPMENT_TEAM = 3UTMZHZAK8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Kolappen/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.horngren.Kolappen;
+				PRODUCT_BUNDLE_IDENTIFIER = se.iths.au20.mirandamutka.Kolappen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

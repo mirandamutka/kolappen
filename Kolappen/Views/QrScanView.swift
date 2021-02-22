@@ -46,14 +46,17 @@ struct QrScanView: View {
             VStack {
                 
                 VStack {
-                
-                Text("Scanna QR-koden framför dig för att få en kölapp")
-                    .font(.subheadline)
+                    if !hasScanned {
+                        Text("Scanna QR-koden framför dig för att få en kölapp")
+                            .foregroundColor(Color("Text"))
+                            .font(.subheadline)
+                    }
                     if self.viewModel.lastQrCode == "Standby..." {
                         Text("Söker efter QR kod...")
                             .bold()
                             .lineLimit(5)
                             .padding()
+                            .foregroundColor(Color("Text"))
                     } else {
                         if uidWasFound == false && hasScanned == true {
                             Text("") //Button to rescan when QR-code is not found
@@ -68,10 +71,24 @@ struct QrScanView: View {
                                         navigateForward()
                                     }) {
                                         VStack {
-                                            Text("Nu betjänas nummer \(currentQueueNumber)")
-                                            Text("Personer i kö: \(queueLength)")
+                                            Text("Nu betjänas nummer:")
+                                                .foregroundColor(Color("Text"))
+                                                .bold()
+                                            Text("\(currentQueueNumber)")
+                                                .foregroundColor(Color("Text"))
+                                                .bold()
+                                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                            Text("Personer i kö:")
+                                                .foregroundColor(Color("Text"))
+                                                .bold()
+                                            Text("\(queueLength)")
+                                                .foregroundColor(Color("Text"))
+                                                .bold()
+                                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                            Spacer()
                                             Text("Ställ dig i kö till \(shopName)")
                                                 .padding()
+                                                .foregroundColor(Color("Text"))
                                                 .background(Color("Background"))
                                         }
                                             
