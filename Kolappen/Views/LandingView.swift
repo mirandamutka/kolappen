@@ -9,22 +9,23 @@ import SwiftUI
 struct LandingView: View {
     
     var body: some View {
-        
         NavigationView() {
-        
-            VStack {
+            ZStack {
+                Color("Background")
+                VStack {
+                    Spacer()
+                Text("Kölappen")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 Spacer()
-            Text("Kölappen")
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Spacer()
-                NavigationLink(
-                    destination: QrScanView(scannedUid: "")) {
-                        Text("Skanna QR-kod")
-                            .font(.system(size: 14))
-                    }
-                Spacer()
+                    NavigationLink(
+                        destination: QrScanView(scannedUid: "")) {
+                            Text("Skanna QR-kod")
+                                .font(.system(size: 14))
+                        }
+                    Spacer()
+                }
             }
+            .ignoresSafeArea()
         }
     }
-       
 }

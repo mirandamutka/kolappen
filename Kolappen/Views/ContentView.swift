@@ -23,33 +23,38 @@ struct ContentView: View {
     var db = Firestore.firestore()
     
     var body: some View {
-        VStack {
-            Text("Välkommen till \(shopName)!")
-            Spacer()
-            if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
-                Text("Det är din tur!")
+        ZStack {
+            Color("Background")
+            VStack {
+                Spacer()
+                Text("Välkommen till \(shopName)!")
                     .foregroundColor(Color("Text"))
-            } else {
-                if currentQueueNumber > myQueueNumber && myQueueNumber != 0 {
-                    Text("Ditt nummer har passerats")
+                Spacer()
+                if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
+                    Text("Det är din tur!")
                         .foregroundColor(Color("Text"))
-                        .padding(.bottom, 20)
-                    ticketButton
                 } else {
-                    Text("Nu betjänas: \(currentQueueNumber)")
-                        .foregroundColor(Color("Text"))
-                        .padding(.bottom, 20)
-                    if myQueueNumber != 0 {
-                        Text("Mitt könummer: \(myQueueNumber)")
+                    if currentQueueNumber > myQueueNumber && myQueueNumber != 0 {
+                        Text("Ditt nummer har passerats")
                             .foregroundColor(Color("Text"))
-                    } else {
+                            .padding(.bottom, 20)
                         ticketButton
+                    } else {
+                        Text("Nu betjänas: \(currentQueueNumber)")
+                            .foregroundColor(Color("Text"))
+                            .padding(.bottom, 20)
+                        if myQueueNumber != 0 {
+                            Text("Mitt könummer: \(myQueueNumber)")
+                                .foregroundColor(Color("Text"))
+                        } else {
+                            ticketButton
+                        }
                     }
                 }
+                Spacer()
             }
-            Spacer()
         }
-        .padding()
+        .ignoresSafeArea()
         .onAppear() {
             print("running!")
             getShop()
