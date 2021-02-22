@@ -36,47 +36,32 @@ struct QrScanView: View {
     var scannedUid : String
 
     var body: some View {
-        
-        ZStack {
-            QrCodeScannerView()
-                .found(r: self.viewModel.onFoundQrCode)
-                .torchLight(isOn: self.viewModel.torchIsOn)
-                .interval(delay: self.viewModel.scanInterval)
-                .frame(width: 400, height: 400, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .background(Color("Background"))
-                .cornerRadius(10)
-
-                
-            VStack {
+            ZStack {
+                Color("Background")
                 VStack {
-                    Spacer()
-                    if !hasScanned {
-                        Text("Scanna QR-koden framför dig för att få en kölapp")
-                            .foregroundColor(Color("Text"))
-                            .font(.subheadline)
-                    }
-                    if self.viewModel.lastQrCode == "Standby..." {
-                        VStack {
-                        Text("Söker efter QR kod...")
-                            .bold()
-                            .lineLimit(5)
-                            .padding()
-                            .foregroundColor(Color("Text"))
-                        }
-                    } else {
-                        if uidWasFound == false && hasScanned == true {
-                            Text("") //Button to rescan when QR-code is not found
+                    VStack {
+                        Spacer()
+
+                        if self.viewModel.lastQrCode == "Standby..." {
+                            VStack {
+                            Text("Söker efter QR kod...")
+                                .bold()
+                                .lineLimit(5)
+                                .padding()
+                                .foregroundColor(Color("Text"))
+                            }
                         } else {
-                            if shopOpen == false {
-                                Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
-                                //Button to rescan
+                            if uidWasFound == false && hasScanned == true {
+                                Text("") //Button to rescan when QR-code is not found
                             } else {
-                                NavigationLink(
-                                    destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
-                                    Button(action: {
-                                        navigateForward()
-                                    }) {
+                                if shopOpen == false {
+                                    Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                                    //Button to rescan
+                                } else {
+                                    NavigationLink(
+                                        destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
                                         VStack {
+                                            Spacer()
                                             Text("Nu betjänas nummer:")
                                                 .foregroundColor(Color("Text"))
                                                 .bold()
@@ -92,39 +77,46 @@ struct QrScanView: View {
                                                 .bold()
                                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                                             Spacer()
-                                            Text("Ställ dig i kö till \(shopName)")
-                                                .padding()
-                                                .foregroundColor(Color("Text"))
-                                                .background(Color("Background"))
+                                            Text("")
+                                                .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                                .padding(.top)
+                                            Spacer()
+                                            Button(action: {
+                                                navigateForward()
+                                            }) {
+                                                Text("Ställ dig i kö till \(shopName)")
+                                            }
+                                            Spacer()
                                         }
-                                        .padding(.vertical, 20)
                                         
-                                    }
-                                    
-                                    }.onAppear() {
-                                        codeWasScanned()
-//                                        navigateForward()
-                                    }
+                                        }.onAppear() {
+                                            codeWasScanned()
+    //                                        navigateForward()
+                                        }
+                                }
                             }
+                            
                         }
-                        
-                    }
-                
-                
+                        if !hasScanned {
+                        Spacer()
+                        Text("")
+                            .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        Spacer()
+                            Text("Scanna QR-koden framför dig för att få en kölapp")
+                                .foregroundColor(Color("Text"))
+                                .font(.subheadline)
+                        Spacer()
+                        }
+                }
             }
-//            .padding(.vertical, 20)
-
-            Spacer()
-//            HStack {
-//                Text("")
-//            }
-                        
-        }
-            .padding()
-            
-            
-        }
-        .background(Color("Background"))
+                
+            QrCodeScannerView()
+                .found(r: self.viewModel.onFoundQrCode)
+                .torchLight(isOn: self.viewModel.torchIsOn)
+                .interval(delay: self.viewModel.scanInterval)
+                .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .cornerRadius(10)
+            }
         .ignoresSafeArea()
     }
         
