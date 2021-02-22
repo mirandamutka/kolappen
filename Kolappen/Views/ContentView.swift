@@ -24,8 +24,7 @@ struct ContentView: View {
     
     var body: some View {
         VStack {
-            Text("\(shopName)")
-            Text("\(scannedUid)")
+            Text("Välkommen till \(shopName)!")
             Spacer()
             if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
                 Text("Det är din tur!")
