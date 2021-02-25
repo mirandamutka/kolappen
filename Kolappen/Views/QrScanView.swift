@@ -22,6 +22,18 @@ struct QrScanView: View {
     
     @State private var mondayOpen : String = ""
     @State private var mondayClose : String = ""
+    @State private var tuesdayOpen : String = ""
+    @State private var tuesdayClose : String = ""
+    @State private var wednesdayOpen : String = ""
+    @State private var wednesdayClose : String = ""
+    @State private var thursdayOpen : String = ""
+    @State private var thursdayClose : String = ""
+    @State private var fridayOpen : String = ""
+    @State private var fridayClose : String = ""
+    @State private var saturdayOpen : String = ""
+    @State private var saturdayClose : String = ""
+    @State private var sundayOpen : String = ""
+    @State private var sundayClose : String = ""
     
     @State var currentQueueNumber : Int = 0
     @State var highestQueueNumber : Int = 0
@@ -57,25 +69,57 @@ struct QrScanView: View {
                                 Text("") //Button to rescan when QR-code is not found
                             } else {
                                 if shopOpen == false {
-//                                    VStack {
-                                        Text("\(shopName)")
-                                            .foregroundColor(Color("Text"))
+                                    VStack {
+                                        Spacer()
                                         Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
                                             .foregroundColor(Color("Text"))
-//                                        padding(.top)
-//                                        padding(.bottom)
+                                            .multilineTextAlignment(.center)
+                                            .padding(.leading, 50)
+                                            .padding(.trailing, 50)
+                                            .padding(.bottom)
                                         Text("Öppettider:")
                                             .foregroundColor(Color("Text"))
+                                            .font(.title3)
                                             .bold()
-//                                            .padding(.bottom)
+                                            .padding(.top)
                                         HStack {
-                                            Text("Måndag")
-                                            Text("\(mondayOpen) - \(mondayClose)")
+                                            VStack {
+                                                Text("Måndag:")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("Tisdag:")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("Onsdag:")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("Torsdag:")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("Fredag:")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("Lördag:")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("Söndag:")
+                                                    .foregroundColor(Color("Text"))
+                                            }
+                                            VStack {
+                                                Text("\(mondayOpen) - \(mondayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("\(tuesdayOpen) - \(tuesdayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("\(wednesdayOpen) - \(wednesdayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("\(thursdayOpen) - \(thursdayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("\(fridayOpen) - \(fridayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("\(saturdayOpen) - \(saturdayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                                Text("\(sundayOpen) - \(sundayClose)")
+                                                    .foregroundColor(Color("Text"))
+                                            }
                                         }
                                         Spacer()
-//                                    }
-//                                    Text("\(shopName)")
-//                                    Spacer()
+                                    }
+                                    .navigationBarTitle("\(shopName)")
+                                    Spacer()
                                     //Button to rescan
                                 } else {
                                     NavigationLink(
@@ -176,9 +220,39 @@ struct QrScanView: View {
                                 let timePickerMondayOpen = dateFormatter.date(from: openingHours[0])!
                                 let timePickerMondayClose = dateFormatter.date(from: closingHours[0])!
                                 
+                                let timePickerTuesdayOpen = dateFormatter.date(from: openingHours[1])!
+                                let timePickerTuesdayClose = dateFormatter.date(from: closingHours[1])!
+                                
+                                let timePickerWednesdayOpen = dateFormatter.date(from: openingHours[2])!
+                                let timePickerWednesdayClose = dateFormatter.date(from: closingHours[2])!
+                                
+                                let timePickerThursdayOpen = dateFormatter.date(from: openingHours[3])!
+                                let timePickerThursdayClose = dateFormatter.date(from: closingHours[3])!
+                                
+                                let timePickerFridayOpen = dateFormatter.date(from: openingHours[4])!
+                                let timePickerFridayClose = dateFormatter.date(from: closingHours[4])!
+                                
+                                let timePickerSaturdayOpen = dateFormatter.date(from: openingHours[5])!
+                                let timePickerSaturdayClose = dateFormatter.date(from: closingHours[5])!
+                                
+                                let timePickerSundayOpen = dateFormatter.date(from: openingHours[6])!
+                                let timePickerSundayClose = dateFormatter.date(from: closingHours[6])!
+                                
                                 dateFormatter.timeStyle = .short
                                 mondayOpen = dateFormatter.string(from: timePickerMondayOpen)
                                 mondayClose = dateFormatter.string(from: timePickerMondayClose)
+                                tuesdayOpen = dateFormatter.string(from: timePickerTuesdayOpen)
+                                tuesdayClose = dateFormatter.string(from: timePickerTuesdayClose)
+                                wednesdayOpen = dateFormatter.string(from: timePickerWednesdayOpen)
+                                wednesdayClose = dateFormatter.string(from: timePickerWednesdayClose)
+                                thursdayOpen = dateFormatter.string(from: timePickerThursdayOpen)
+                                thursdayClose = dateFormatter.string(from: timePickerThursdayClose)
+                                fridayOpen = dateFormatter.string(from: timePickerFridayOpen)
+                                fridayClose = dateFormatter.string(from: timePickerFridayClose)
+                                saturdayOpen = dateFormatter.string(from: timePickerSaturdayOpen)
+                                saturdayClose = dateFormatter.string(from: timePickerSaturdayClose)
+                                sundayOpen = dateFormatter.string(from: timePickerSundayOpen)
+                                sundayClose = dateFormatter.string(from: timePickerSundayClose)
                                 
                             }
                             
