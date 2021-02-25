@@ -30,6 +30,21 @@ struct QrScanView: View {
     
     @State var uidWasFound = false
     @State var hasScanned = false
+    
+    @State private var mondayOpen : String = ""
+    @State private var mondayClose : String = ""
+    @State private var tuesdayOpen : String = ""
+    @State private var tuesdayClose : String = ""
+    @State private var wednesdayOpen : String = ""
+    @State private var wednesdayClose : String = ""
+    @State private var thursdayOpen : String = ""
+    @State private var thursdayClose : String = ""
+    @State private var fridayOpen : String = ""
+    @State private var fridayClose : String = ""
+    @State private var saturdayOpen : String = ""
+    @State private var saturdayClose : String = ""
+    @State private var sundayOpen : String = ""
+    @State private var sundayClose : String = ""
 
     var db = Firestore.firestore()
     
@@ -55,7 +70,27 @@ struct QrScanView: View {
                                 Text("") //Button to rescan when QR-code is not found
                             } else {
                                 if shopOpen == false {
-                                    Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                                    VStack {
+                                        Text("\(shopName)")
+                                            .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                                            .foregroundColor(Color("Text"))
+                                        Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                                            .foregroundColor(Color("Text"))
+                                            .multilineTextAlignment(/*@START_MENU_TOKEN@*/.leading/*@END_MENU_TOKEN@*/)
+                                        padding(.top)
+                                        padding(.bottom)
+                                        Text("Öppettider:")
+                                            .foregroundColor(Color("Text"))
+                                            .bold()
+                                            .padding(.bottom)
+                                        HStack {
+                                            Text("Måndag")
+                                            Text("\(mondayOpen) - \(mondayClose)")
+                                        }
+                                        Spacer()
+                                        
+                                        
+                                    }
                                     //Button to rescan
                                 } else {
                                     NavigationLink(
@@ -109,13 +144,14 @@ struct QrScanView: View {
                         }
                 }
             }
-                
+                if shopOpen {
             QrCodeScannerView()
                 .found(r: self.viewModel.onFoundQrCode)
                 .torchLight(isOn: self.viewModel.torchIsOn)
                 .interval(delay: self.viewModel.scanInterval)
                 .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .cornerRadius(10)
+                }
             }
         .ignoresSafeArea()
     }
@@ -145,6 +181,33 @@ struct QrScanView: View {
                                 currentQueueNumber = shop.currentQueueNumber
                                 highestQueueNumber = shop.highestQueueNumber
                                 queueLength = highestQueueNumber - currentQueueNumber
+                                
+                                let openingHours = shop.hoursOpen
+                                let closingHours = shop.hoursClosed
+                                
+                                let dateFormatter = DateFormatter()
+                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
+                                
+                                let timePickerMondayOpen = dateFormatter.date(from: openingHours[0])!
+//                                let timePickerTuesdayOpen = dateFormatter.date(from: openingHours[1])!
+//                                let timePickerWednesdayOpen = dateFormatter.date(from: openingHours[2])!
+//                                let timePickerThursdayOpen = dateFormatter.date(from: openingHours[3])!
+//                                let timePickerFridayOpen = dateFormatter.date(from: openingHours[4])!
+//                                let timePickerSaturdayOpen = dateFormatter.date(from: openingHours[5])!
+//                                let timePickerSundayOpen = dateFormatter.date(from: openingHours[6])!
+                                
+                                let timePickerMondayClose = dateFormatter.date(from: closingHours[0])!
+//                                let timePickerTuesdayClose = dateFormatter.date(from: closingHours[1])!
+//                                let timePickerWednesdayClose = dateFormatter.date(from: closingHours[2])!
+//                                let timePickerThursdayClose = dateFormatter.date(from: closingHours[3])!
+//                                let timePickerFridayClose = dateFormatter.date(from: closingHours[4])!
+//                                let timePickerSaturdayClose = dateFormatter.date(from: closingHours[5])!
+//                                let timePickerSundayClose = dateFormatter.date(from: closingHours[6])!
+                                
+                                dateFormatter.timeStyle = .short
+                                mondayOpen = dateFormatter.string(from: timePickerMondayOpen)
+                                mondayClose = dateFormatter.string(from: timePickerMondayClose)
+                                
                             }
                             
                             print("uidWasFound: \(uidWasFound)")
@@ -160,6 +223,8 @@ struct QrScanView: View {
             }
         }
     }
+    
+    
     
     private func navigateForward() {
         //check if uid is valid
