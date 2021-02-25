@@ -10,9 +10,9 @@ import FirebaseFirestoreSwift
 
 struct Shop : Codable, Identifiable {
     @DocumentID var id : String?
+    var hoursOpen : [String]
+    var hoursClosed : [String]
     var shopName : String
-//    var hoursOpen : [String]
-//    var hoursClosed : [String]
     var shopOpen : Bool
     var currentQueueNumber : Int
     var highestQueueNumber : Int

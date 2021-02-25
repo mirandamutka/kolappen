@@ -18,7 +18,7 @@ struct QrScanView: View {
     
     @State var shopName : String = ""
 
-    @State var shopOpen : Bool = true
+    @State private var shopOpen : Bool = false
     
     
     @State var currentQueueNumber : Int = 0
@@ -144,14 +144,12 @@ struct QrScanView: View {
                         }
                 }
             }
-                if shopOpen {
             QrCodeScannerView()
                 .found(r: self.viewModel.onFoundQrCode)
                 .torchLight(isOn: self.viewModel.torchIsOn)
                 .interval(delay: self.viewModel.scanInterval)
                 .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .cornerRadius(10)
-                }
             }
         .ignoresSafeArea()
     }
@@ -182,8 +180,8 @@ struct QrScanView: View {
                                 highestQueueNumber = shop.highestQueueNumber
                                 queueLength = highestQueueNumber - currentQueueNumber
                                 
-//                                let openingHours = shop.hoursOpen
-//                                let closingHours = shop.hoursClosed
+                                let openingHours = shop.hoursOpen
+                                let closingHours = shop.hoursClosed
 //
 //                                let dateFormatter = DateFormatter()
 //                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
