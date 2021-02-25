@@ -85,7 +85,7 @@ struct QrScanView: View {
                                             .padding(.bottom)
                                         HStack {
                                             Text("Måndag")
-                                            Text("\(mondayOpen) - \(mondayClose)")
+//                                            Text("\(mondayOpen) - \(mondayClose)")
                                         }
                                         Spacer()
                                         
@@ -182,13 +182,13 @@ struct QrScanView: View {
                                 highestQueueNumber = shop.highestQueueNumber
                                 queueLength = highestQueueNumber - currentQueueNumber
                                 
-                                let openingHours = shop.hoursOpen
-                                let closingHours = shop.hoursClosed
-                                
-                                let dateFormatter = DateFormatter()
-                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
-                                
-                                let timePickerMondayOpen = dateFormatter.date(from: openingHours[0])!
+//                                let openingHours = shop.hoursOpen
+//                                let closingHours = shop.hoursClosed
+//
+//                                let dateFormatter = DateFormatter()
+//                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
+//
+//                                let timePickerMondayOpen = dateFormatter.date(from: openingHours[0])!
 //                                let timePickerTuesdayOpen = dateFormatter.date(from: openingHours[1])!
 //                                let timePickerWednesdayOpen = dateFormatter.date(from: openingHours[2])!
 //                                let timePickerThursdayOpen = dateFormatter.date(from: openingHours[3])!
@@ -196,17 +196,17 @@ struct QrScanView: View {
 //                                let timePickerSaturdayOpen = dateFormatter.date(from: openingHours[5])!
 //                                let timePickerSundayOpen = dateFormatter.date(from: openingHours[6])!
                                 
-                                let timePickerMondayClose = dateFormatter.date(from: closingHours[0])!
+//                                let timePickerMondayClose = dateFormatter.date(from: closingHours[0])!
 //                                let timePickerTuesdayClose = dateFormatter.date(from: closingHours[1])!
 //                                let timePickerWednesdayClose = dateFormatter.date(from: closingHours[2])!
 //                                let timePickerThursdayClose = dateFormatter.date(from: closingHours[3])!
 //                                let timePickerFridayClose = dateFormatter.date(from: closingHours[4])!
 //                                let timePickerSaturdayClose = dateFormatter.date(from: closingHours[5])!
 //                                let timePickerSundayClose = dateFormatter.date(from: closingHours[6])!
-                                
-                                dateFormatter.timeStyle = .short
-                                mondayOpen = dateFormatter.string(from: timePickerMondayOpen)
-                                mondayClose = dateFormatter.string(from: timePickerMondayClose)
+//
+//                                dateFormatter.timeStyle = .short
+//                                mondayOpen = dateFormatter.string(from: timePickerMondayOpen)
+//                                mondayClose = dateFormatter.string(from: timePickerMondayClose)
                                 
                             }
                             
