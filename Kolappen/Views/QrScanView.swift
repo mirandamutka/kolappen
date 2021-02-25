@@ -20,6 +20,8 @@ struct QrScanView: View {
 
     @State var shopOpen : Bool = true
     
+    @State private var mondayOpen : String = ""
+    @State private var mondayClose : String = ""
     
     @State var currentQueueNumber : Int = 0
     @State var highestQueueNumber : Int = 0
@@ -55,7 +57,25 @@ struct QrScanView: View {
                                 Text("") //Button to rescan when QR-code is not found
                             } else {
                                 if shopOpen == false {
-                                    Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+//                                    VStack {
+                                        Text("\(shopName)")
+                                            .foregroundColor(Color("Text"))
+                                        Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                                            .foregroundColor(Color("Text"))
+//                                        padding(.top)
+//                                        padding(.bottom)
+                                        Text("Öppettider:")
+                                            .foregroundColor(Color("Text"))
+                                            .bold()
+//                                            .padding(.bottom)
+                                        HStack {
+                                            Text("Måndag")
+                                            Text("\(mondayOpen) - \(mondayClose)")
+                                        }
+                                        Spacer()
+//                                    }
+//                                    Text("\(shopName)")
+//                                    Spacer()
                                     //Button to rescan
                                 } else {
                                     NavigationLink(
@@ -109,14 +129,15 @@ struct QrScanView: View {
                         }
                 }
             }
-                
-            QrCodeScannerView()
+            if shopOpen {
+                QrCodeScannerView()
                 .found(r: self.viewModel.onFoundQrCode)
                 .torchLight(isOn: self.viewModel.torchIsOn)
                 .interval(delay: self.viewModel.scanInterval)
                 .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .cornerRadius(10)
             }
+        }
         .ignoresSafeArea()
     }
         
@@ -145,6 +166,20 @@ struct QrScanView: View {
                                 currentQueueNumber = shop.currentQueueNumber
                                 highestQueueNumber = shop.highestQueueNumber
                                 queueLength = highestQueueNumber - currentQueueNumber
+                                
+                                let openingHours = shop.hoursOpen
+                                let closingHours = shop.hoursClosed
+
+                                let dateFormatter = DateFormatter()
+                                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss z"
+
+                                let timePickerMondayOpen = dateFormatter.date(from: openingHours[0])!
+                                let timePickerMondayClose = dateFormatter.date(from: closingHours[0])!
+                                
+                                dateFormatter.timeStyle = .short
+                                mondayOpen = dateFormatter.string(from: timePickerMondayOpen)
+                                mondayClose = dateFormatter.string(from: timePickerMondayClose)
+                                
                             }
                             
                             print("uidWasFound: \(uidWasFound)")
