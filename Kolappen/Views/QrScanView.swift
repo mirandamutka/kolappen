@@ -15,7 +15,6 @@ struct QrScanView: View {
     
     @State var codeScanned = false
     
-    
     @State var shopName : String = ""
 
     @State var shopOpen : Bool = true
@@ -38,7 +37,6 @@ struct QrScanView: View {
     @State var currentQueueNumber : Int = 0
     @State var highestQueueNumber : Int = 0
     @State var queueLength : Int = 0
-    
     
     @State var uid : String = ""
     
@@ -72,99 +70,12 @@ struct QrScanView: View {
                                 Text("") //Button to rescan when QR-code is not found
                             } else {
                                 if shopOpen == false {
-                                    VStack {
-                                        Spacer()
-                                        Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
-                                            .foregroundColor(Color("Text"))
-                                            .multilineTextAlignment(.center)
-                                            .padding(.leading, 50)
-                                            .padding(.trailing, 50)
-                                            .padding(.bottom)
-                                        Text("Öppettider:")
-                                            .foregroundColor(Color("Text"))
-                                            .font(.title3)
-                                            .bold()
-                                            .padding(.top)
-                                            .padding(.bottom)
-                                        HStack {
-                                            VStack (alignment: .leading) {
-                                                Text("Måndag:")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("Tisdag:")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("Onsdag:")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("Torsdag:")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("Fredag:")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("Lördag:")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("Söndag:")
-                                                    .foregroundColor(Color("Text"))
-                                            }
-                                            VStack (alignment: .trailing) {
-                                                Text("\(mondayOpen) - \(mondayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("\(tuesdayOpen) - \(tuesdayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("\(wednesdayOpen) - \(wednesdayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("\(thursdayOpen) - \(thursdayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("\(fridayOpen) - \(fridayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("\(saturdayOpen) - \(saturdayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                                Text("\(sundayOpen) - \(sundayClose)")
-                                                    .foregroundColor(Color("Text"))
-                                            }
-                                        }
-                                        Spacer()
-                                    }
-                                    .navigationBarTitle("\(shopName)")
-                                    Spacer()
-                                    //Button to rescan
+                                    shopIsClosed
+                                    //Button to rescan goes here
                                 } else {
-                                    NavigationLink(
-                                        destination: ContentView(scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
-                                        VStack {
-                                            Spacer()
-                                            Text("Nu betjänas nummer:")
-                                                .foregroundColor(Color("Text"))
-                                                .bold()
-                                            Text("\(currentQueueNumber)")
-                                                .foregroundColor(Color("Text"))
-                                                .bold()
-                                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                            Text("Personer i kö:")
-                                                .foregroundColor(Color("Text"))
-                                                .bold()
-                                            Text("\(queueLength)")
-                                                .foregroundColor(Color("Text"))
-                                                .bold()
-                                                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                                            Spacer()
-                                            Text("")
-                                                .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                                .padding(.top)
-                                            Spacer()
-                                            Button(action: {
-                                                codeWasScanned()
-//                                                navigateForward()
-                                            }) {
-                                                Text("Ställ dig i kö till \(shopName)")
-                                            }
-                                            Spacer()
-                                        }
-                                        
-                                        }.onAppear() {
-                                            codeWasScanned()
-    //                                        navigateForward()
-                                        }
+                                    readyToQueue
                                 }
                             }
-                            
                         }
                         if !hasScanned {
                         Spacer()
@@ -178,6 +89,7 @@ struct QrScanView: View {
                         }
                 }
             }
+                
             if shopOpen {
                 QrCodeScannerView()
                 .found(r: self.viewModel.onFoundQrCode)
@@ -188,6 +100,97 @@ struct QrScanView: View {
             }
         }
         .ignoresSafeArea()
+    }
+    
+    var shopIsClosed: some View {
+        VStack {
+            Spacer()
+            Text("Butiken är tyvärr stängd - kom gärna tillbaka senare")
+                .foregroundColor(Color("Text"))
+                .multilineTextAlignment(.center)
+                .padding(.leading, 50)
+                .padding(.trailing, 50)
+                .padding(.bottom)
+            Text("Öppettider:")
+                .foregroundColor(Color("Text"))
+                .font(.title3)
+                .bold()
+                .padding(.top)
+                .padding(.bottom)
+            HStack {
+                VStack (alignment: .leading) {
+                    Text("Måndag:")
+                        .foregroundColor(Color("Text"))
+                    Text("Tisdag:")
+                        .foregroundColor(Color("Text"))
+                    Text("Onsdag:")
+                        .foregroundColor(Color("Text"))
+                    Text("Torsdag:")
+                        .foregroundColor(Color("Text"))
+                    Text("Fredag:")
+                        .foregroundColor(Color("Text"))
+                    Text("Lördag:")
+                        .foregroundColor(Color("Text"))
+                    Text("Söndag:")
+                        .foregroundColor(Color("Text"))
+                }
+                VStack (alignment: .trailing) {
+                    Text("\(mondayOpen) - \(mondayClose)")
+                        .foregroundColor(Color("Text"))
+                    Text("\(tuesdayOpen) - \(tuesdayClose)")
+                        .foregroundColor(Color("Text"))
+                    Text("\(wednesdayOpen) - \(wednesdayClose)")
+                        .foregroundColor(Color("Text"))
+                    Text("\(thursdayOpen) - \(thursdayClose)")
+                        .foregroundColor(Color("Text"))
+                    Text("\(fridayOpen) - \(fridayClose)")
+                        .foregroundColor(Color("Text"))
+                    Text("\(saturdayOpen) - \(saturdayClose)")
+                        .foregroundColor(Color("Text"))
+                    Text("\(sundayOpen) - \(sundayClose)")
+                        .foregroundColor(Color("Text"))
+                }
+            }
+            Spacer()
+        }
+        .navigationBarTitle("\(shopName)")
+    }
+    
+    var readyToQueue: some View {
+        NavigationLink(
+            destination: ContentView(scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
+            VStack {
+                Spacer()
+                Text("Nu betjänas nummer:")
+                    .foregroundColor(Color("Text"))
+                    .bold()
+                Text("\(currentQueueNumber)")
+                    .foregroundColor(Color("Text"))
+                    .bold()
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Text("Personer i kö:")
+                    .foregroundColor(Color("Text"))
+                    .bold()
+                Text("\(queueLength)")
+                    .foregroundColor(Color("Text"))
+                    .bold()
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                Spacer()
+                Text("")
+                    .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .padding(.top)
+                Spacer()
+                Button(action: {
+                    navigateForward()
+                }) {
+                    Text("Ställ dig i kö till \(shopName)")
+                }
+                Spacer()
+            }
+            
+            }.onAppear() {
+                codeWasScanned()
+            }
     }
         
     private func codeWasScanned() {
@@ -246,18 +249,25 @@ struct QrScanView: View {
                                 let timePickerSundayClose = dateFormatter.date(from: closingHours[6])!
                                 
                                 dateFormatter.timeStyle = .short
+                                
                                 mondayOpen = dateFormatter.string(from: timePickerMondayOpen)
                                 mondayClose = dateFormatter.string(from: timePickerMondayClose)
+                                
                                 tuesdayOpen = dateFormatter.string(from: timePickerTuesdayOpen)
                                 tuesdayClose = dateFormatter.string(from: timePickerTuesdayClose)
+                                
                                 wednesdayOpen = dateFormatter.string(from: timePickerWednesdayOpen)
                                 wednesdayClose = dateFormatter.string(from: timePickerWednesdayClose)
+                                
                                 thursdayOpen = dateFormatter.string(from: timePickerThursdayOpen)
                                 thursdayClose = dateFormatter.string(from: timePickerThursdayClose)
+                                
                                 fridayOpen = dateFormatter.string(from: timePickerFridayOpen)
                                 fridayClose = dateFormatter.string(from: timePickerFridayClose)
+                                
                                 saturdayOpen = dateFormatter.string(from: timePickerSaturdayOpen)
                                 saturdayClose = dateFormatter.string(from: timePickerSaturdayClose)
+                                
                                 sundayOpen = dateFormatter.string(from: timePickerSundayOpen)
                                 sundayClose = dateFormatter.string(from: timePickerSundayClose)
                                 
