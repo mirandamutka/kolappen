@@ -14,10 +14,10 @@
             filePath = "Kolappen/Views/QrScanView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "body"
-            landmarkType = "24">
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "QrScanView"
+            landmarkType = "14">
             <Locations>
                <Location
                   uuid = "B742C7D3-25C3-45B7-ACE2-84EA7DD79A47 - a1da85aab3eb571c"

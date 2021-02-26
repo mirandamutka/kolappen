@@ -44,6 +44,9 @@ struct QrScanView: View {
     
     @State var uidWasFound = false
     @State var hasScanned = false
+    
+    @State var documentId : String = ""
+    @State var myQueueNumber : Int = 0
 
     var db = Firestore.firestore()
     
@@ -124,7 +127,7 @@ struct QrScanView: View {
                                     //Button to rescan
                                 } else {
                                     NavigationLink(
-                                        destination: ContentView(scannedUid: self.viewModel.lastQrCode), isActive: $codeScanned) {
+                                        destination: ContentView(scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
                                         VStack {
                                             Spacer()
                                             Text("Nu betjänas nummer:")
@@ -147,7 +150,8 @@ struct QrScanView: View {
                                                 .padding(.top)
                                             Spacer()
                                             Button(action: {
-                                                navigateForward()
+                                                codeWasScanned()
+//                                                navigateForward()
                                             }) {
                                                 Text("Ställ dig i kö till \(shopName)")
                                             }
@@ -212,6 +216,8 @@ struct QrScanView: View {
                                 highestQueueNumber = shop.highestQueueNumber
                                 queueLength = highestQueueNumber - currentQueueNumber
                                 
+                                documentId = document.documentID
+
                                 let openingHours = shop.hoursOpen
                                 let closingHours = shop.hoursClosed
 
@@ -256,24 +262,23 @@ struct QrScanView: View {
                                 sundayClose = dateFormatter.string(from: timePickerSundayClose)
                                 
                             }
-                            
                             print("uidWasFound: \(uidWasFound)")
-                            
                         } else {
                             print("Document does not exist")
                         }
                     case.failure(let error):
                         print("Error decoding item: \(error)")
                     }
-                    
                 }
             }
         }
     }
     
     private func navigateForward() {
-        //check if uid is valid
-        //pass along uid scanned
+        myQueueNumber = highestQueueNumber + 1
+        do {
+            db.collection("users").document(documentId).updateData(["highestQueueNumber" : myQueueNumber])
+        }
         codeScanned = true
     }
     
