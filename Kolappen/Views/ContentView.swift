@@ -19,6 +19,7 @@ struct ContentView: View {
     @State var myQueueNumber : Int = 0
     
     var scannedUid : String
+    var queueNumber : Int
     
     var db = Firestore.firestore()
     
@@ -26,29 +27,27 @@ struct ContentView: View {
         ZStack {
             Color("Background")
             VStack {
-                Spacer()
                 Text("Välkommen till \(shopName)!")
                     .foregroundColor(Color("Text"))
+                    .font(.title)
+                    .padding(.top, 90)
+                    .padding(.bottom)
                 Spacer()
                 if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
                     Text("Det är din tur!")
+                        .font(.title)
                         .foregroundColor(Color("Text"))
                 } else {
                     if currentQueueNumber > myQueueNumber && myQueueNumber != 0 {
                         Text("Ditt nummer har passerats")
+                            .font(.title2)
                             .foregroundColor(Color("Text"))
                             .padding(.bottom, 20)
+                        
                         ticketButton
+                        
                     } else {
-                        Text("Nu betjänas: \(currentQueueNumber)")
-                            .foregroundColor(Color("Text"))
-                            .padding(.bottom, 20)
-                        if myQueueNumber != 0 {
-                            Text("Mitt könummer: \(myQueueNumber)")
-                                .foregroundColor(Color("Text"))
-                        } else {
-                            ticketButton
-                        }
+                        queueNumberSlip
                     }
                 }
                 Spacer()
@@ -56,9 +55,32 @@ struct ContentView: View {
         }
         .ignoresSafeArea()
         .onAppear() {
-            print("running!")
+            myQueueNumber = queueNumber
             getShop()
         }
+    }
+    
+    var queueNumberSlip: some View {
+        VStack {
+            Text("Din plats i kön:")
+                .foregroundColor(Color("Text"))
+                .font(.title2)
+            
+            ZStack {
+                Image("QueueSlip")
+                    .resizable()
+                    .frame(width: 80, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                Text("\(myQueueNumber)")
+                    .foregroundColor(.black)
+                    .font(.title)
+                    .bold()
+            }
+            
+            Text("Nu betjänas: \(currentQueueNumber)")
+                .foregroundColor(Color("Text"))
+                .padding(.bottom, 20)
+        }
+        
     }
     
     var ticketButton: some View {
@@ -67,7 +89,7 @@ struct ContentView: View {
         }, label: {
             Text("Ta kölapp")
                 .font(.title2)
-                .foregroundColor(Color("Text"))
+                .foregroundColor(Color("Link"))
                 .padding(.horizontal)
         })
     }
