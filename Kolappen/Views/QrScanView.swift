@@ -82,8 +82,9 @@ struct QrScanView: View {
                                             .font(.title3)
                                             .bold()
                                             .padding(.top)
+                                            .padding(.bottom)
                                         HStack {
-                                            VStack {
+                                            VStack (alignment: .leading) {
                                                 Text("Måndag:")
                                                     .foregroundColor(Color("Text"))
                                                 Text("Tisdag:")
@@ -99,7 +100,7 @@ struct QrScanView: View {
                                                 Text("Söndag:")
                                                     .foregroundColor(Color("Text"))
                                             }
-                                            VStack {
+                                            VStack (alignment: .trailing) {
                                                 Text("\(mondayOpen) - \(mondayClose)")
                                                     .foregroundColor(Color("Text"))
                                                 Text("\(tuesdayOpen) - \(tuesdayClose)")
