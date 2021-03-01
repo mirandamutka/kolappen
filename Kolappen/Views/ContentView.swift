@@ -59,6 +59,7 @@ struct ContentView: View {
         }
         .ignoresSafeArea()
         .navigationBarTitle("\(shopName)")
+        .navigationBarBackButtonHidden(true)
         .onAppear() {
             myQueueNumber = queueNumber
             getShop()
@@ -70,22 +71,26 @@ struct ContentView: View {
             Spacer()
             Text("Din plats i kön:")
                 .foregroundColor(Color("Text"))
-                .font(.title2)
-            
+                .font(.title3)
+                .padding(.bottom, 20)
             ZStack {
                 Image("QueueSlip")
                     .resizable()
-                    .frame(width: 80, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .frame(width: 100, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Text("\(myQueueNumber)")
                     .foregroundColor(.black)
                     .font(.title)
                     .bold()
             }
-            
-            Text("Nu betjänas: \(currentQueueNumber)")
+            Spacer()
+            Text("Nu betjänas:")
                 .foregroundColor(Color("Text"))
+                .font(.title3)
+            Text("\(currentQueueNumber)")
+                .foregroundColor(Color("Text"))
+                .font(.title3)
+                .bold()
                 .padding(.bottom, 20)
-            
             Spacer()
             Button(action: {
                 resetScanner = false
