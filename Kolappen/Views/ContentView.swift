@@ -11,6 +11,8 @@ import FirebaseFirestore
 
 struct ContentView: View {
     
+    @Binding var resetScanner : Bool
+    
     @State var shopName : String = ""
     @State var currentQueueNumber : Int = 0
     @State var highestQueueNumber : Int = 0
@@ -62,6 +64,9 @@ struct ContentView: View {
     
     var queueNumberSlip: some View {
         VStack {
+            
+            Spacer()
+            
             Text("Din plats i kön:")
                 .foregroundColor(Color("Text"))
                 .font(.title2)
@@ -79,6 +84,20 @@ struct ContentView: View {
             Text("Nu betjänas: \(currentQueueNumber)")
                 .foregroundColor(Color("Text"))
                 .padding(.bottom, 20)
+            
+            Spacer()
+            
+            Button(action: {
+                resetScanner = false
+            }, label: {
+                Text("Gå ur kö")
+                    .font(.title3)
+                    .bold()
+                    .foregroundColor(Color(.systemRed))
+                    .padding(.horizontal)
+            })
+            
+            Spacer()
         }
         
     }

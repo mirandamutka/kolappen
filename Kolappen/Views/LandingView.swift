@@ -8,6 +8,8 @@
 import SwiftUI
 struct LandingView: View {
     
+    @State var resetScanner : Bool = false
+    
     var body: some View {
         NavigationView() {
             ZStack {
@@ -18,14 +20,20 @@ struct LandingView: View {
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 Spacer()
                     NavigationLink(
-                        destination: QrScanView(scannedUid: "")) {
+                        destination: QrScanView(resetScanner: $resetScanner, scannedUid: ""), isActive: $resetScanner) {
+                        Button(action: {
+                            resetScanner = true
+                        }, label: {
                             Text("Skanna QR-kod")
-                                .font(.system(size: 14))
-                        }
+                        })
+                        .font(.system(size: 14))
+                        .foregroundColor(Color("Link"))
+                    }
                     Spacer()
                 }
             }
             .ignoresSafeArea()
         }
+        
     }
 }
