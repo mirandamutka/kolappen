@@ -28,13 +28,15 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Color("Background")
+
             VStack {
-                Text("Välkommen till \(shopName)!")
+                Text("")
                     .foregroundColor(Color("Text"))
                     .font(.title)
                     .padding(.top, 90)
                     .padding(.bottom)
                 Spacer()
+
                 if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
                     Text("Det är din tur!")
                         .font(.title)
@@ -56,6 +58,7 @@ struct ContentView: View {
             }
         }
         .ignoresSafeArea()
+        .navigationBarTitle("\(shopName)")
         .onAppear() {
             myQueueNumber = queueNumber
             getShop()
@@ -64,9 +67,7 @@ struct ContentView: View {
     
     var queueNumberSlip: some View {
         VStack {
-            
             Spacer()
-            
             Text("Din plats i kön:")
                 .foregroundColor(Color("Text"))
                 .font(.title2)
@@ -86,7 +87,6 @@ struct ContentView: View {
                 .padding(.bottom, 20)
             
             Spacer()
-            
             Button(action: {
                 resetScanner = false
             }, label: {
@@ -96,7 +96,6 @@ struct ContentView: View {
                     .foregroundColor(Color(.systemRed))
                     .padding(.horizontal)
             })
-            
             Spacer()
         }
         
