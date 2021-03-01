@@ -10,8 +10,10 @@ import SwiftUI
 import Firebase
 
 struct QrScanView: View {
-    
+       
     @ObservedObject var viewModel = ScannerViewModel()
+    
+    @Binding var resetScanner : Bool
     
     @State var codeScanned = false
     
@@ -97,6 +99,7 @@ struct QrScanView: View {
                 .interval(delay: self.viewModel.scanInterval)
                 .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .cornerRadius(10)
+                    
             }
         }
         .ignoresSafeArea()
@@ -158,7 +161,7 @@ struct QrScanView: View {
     
     var readyToQueue: some View {
         NavigationLink(
-            destination: ContentView(scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
+            destination: ContentView(resetScanner: $resetScanner, scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
             VStack {
                 Spacer()
                 Text("Nu betjänas nummer:")

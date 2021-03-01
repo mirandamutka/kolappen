@@ -116,4 +116,5 @@ struct QrCodeScannerView : UIViewRepresentable {
         uiView.setContentHuggingPriority(.defaultHigh, for: .vertical)
         uiView.setContentHuggingPriority(.defaultLow, for: .horizontal)
     }
+
 }
