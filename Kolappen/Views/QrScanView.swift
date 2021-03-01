@@ -160,40 +160,51 @@ struct QrScanView: View {
     }
     
     var readyToQueue: some View {
-        NavigationLink(
-            destination: ContentView(resetScanner: $resetScanner, scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
-            VStack {
-                Spacer()
-                Text("Nu betjänas nummer:")
-                    .foregroundColor(Color("Text"))
-                    .bold()
-                Text("\(currentQueueNumber)")
-                    .foregroundColor(Color("Text"))
-                    .bold()
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Text("Personer i kö:")
-                    .foregroundColor(Color("Text"))
-                    .bold()
-                Text("\(queueLength)")
-                    .foregroundColor(Color("Text"))
-                    .bold()
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                Spacer()
-                Text("")
-                    .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(.top)
-                Spacer()
+        VStack {
+            Spacer()
+            Text("Nu betjänas nummer:")
+                .foregroundColor(Color("Text"))
+                .bold()
+            Text("\(currentQueueNumber)")
+                .foregroundColor(Color("Text"))
+                .bold()
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            Text("Personer i kö:")
+                .foregroundColor(Color("Text"))
+                .bold()
+            Text("\(queueLength)")
+                .foregroundColor(Color("Text"))
+                .bold()
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .padding(.bottom)
+            Spacer()
+            Text("")
+                .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .padding(.top)
+            Text("Ditt turnummer blir: \(myQueueNumber)")
+                .foregroundColor(Color("Text"))
+                .padding(.bottom)
+            NavigationLink(
+                destination: ContentView(resetScanner: $resetScanner, scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
                 Button(action: {
                     navigateForward()
                 }) {
-                    Text("Ställ dig i kö till \(shopName)")
+                    HStack {
+                        Text("Ställ dig i kö till")
+                        Text("\(shopName)")
+                            .bold()
+                    }
+                    .foregroundColor(Color("Link"))
+                    .padding(.bottom)
                 }
-                Spacer()
-            }
             
-            }.onAppear() {
-                codeWasScanned()
             }
+            Spacer()
+        }
+        .onAppear() {
+            codeWasScanned()
+            myQueueNumber = highestQueueNumber + 1
+        }
     }
         
     private func codeWasScanned() {
