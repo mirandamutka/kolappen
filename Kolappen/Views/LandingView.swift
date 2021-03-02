@@ -19,6 +19,10 @@ struct LandingView: View {
                 Text("Kölappen")
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                 Spacer()
+                    Image("QueueSlip")
+                        .resizable()
+                        .frame(width: 100, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    Spacer()
                     NavigationLink(
                         destination: QrScanView(resetScanner: $resetScanner, scannedUid: ""), isActive: $resetScanner) {
                         Button(action: {
