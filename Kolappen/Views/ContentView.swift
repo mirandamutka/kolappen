@@ -38,18 +38,40 @@ struct ContentView: View {
                 Spacer()
 
                 if currentQueueNumber == myQueueNumber && currentQueueNumber != 0 {
+//                    Spacer()
                     Text("Det är din tur!")
                         .font(.title)
                         .foregroundColor(Color("Text"))
+                    ZStack {
+                        Image("QueueSlip")
+                            .resizable()
+                            .frame(width: 100, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        Text("\(myQueueNumber)")
+                            .foregroundColor(.black)
+                            .font(.title)
+                            .bold()
+                    }
+                    Spacer()
                 } else {
                     if currentQueueNumber > myQueueNumber && myQueueNumber != 0 {
+                        Spacer()
                         Text("Ditt nummer har passerats")
-                            .font(.title2)
                             .foregroundColor(Color("Text"))
+                            .font(.title3)
                             .padding(.bottom, 20)
-                        
+                        ZStack {
+                            Image("QueueSlip")
+                                .resizable()
+                                .frame(width: 100, height: 170, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .saturation(0.0)
+                            Text("\(myQueueNumber)")
+                                .foregroundColor(.gray)
+                                .font(.title)
+                                .bold()
+                        }
+                        Spacer()
                         ticketButton
-                        
+                        Spacer()
                     } else {
                         queueNumberSlip
                     }
@@ -69,7 +91,7 @@ struct ContentView: View {
     var queueNumberSlip: some View {
         VStack {
             Spacer()
-            Text("Din plats i kön:")
+            Text("Din plats i kön")
                 .foregroundColor(Color("Text"))
                 .font(.title3)
                 .padding(.bottom, 20)
@@ -83,12 +105,12 @@ struct ContentView: View {
                     .bold()
             }
             Spacer()
-            Text("Nu betjänas:")
+            Text("Nu betjänas")
                 .foregroundColor(Color("Text"))
                 .font(.title3)
             Text("\(currentQueueNumber)")
                 .foregroundColor(Color("Text"))
-                .font(.title3)
+                .font(.title)
                 .bold()
                 .padding(.bottom, 20)
             Spacer()
@@ -110,8 +132,9 @@ struct ContentView: View {
         Button(action: {
             newTicket()
         }, label: {
-            Text("Ta kölapp")
-                .font(.title2)
+            Text("Ta ny kölapp")
+                .font(.title3)
+                .bold()
                 .foregroundColor(Color("Link"))
                 .padding(.horizontal)
         })

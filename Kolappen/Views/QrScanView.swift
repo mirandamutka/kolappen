@@ -162,28 +162,36 @@ struct QrScanView: View {
     var readyToQueue: some View {
         VStack {
             Spacer()
-            Text("Nu betjänas nummer:")
+            Text("Nu betjänas nummer")
                 .foregroundColor(Color("Text"))
-                .bold()
+                .font(.title3)
             Text("\(currentQueueNumber)")
                 .foregroundColor(Color("Text"))
-                .bold()
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-            Text("Personer i kö:")
-                .foregroundColor(Color("Text"))
                 .bold()
+            Text("Personer i kö")
+                .foregroundColor(Color("Text"))
+                .font(.title3)
             Text("\(queueLength)")
                 .foregroundColor(Color("Text"))
-                .bold()
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
                 .padding(.bottom)
             Spacer()
             Text("")
                 .frame(width: 350, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .padding(.top)
-            Text("Ditt turnummer blir: \(myQueueNumber)")
-                .foregroundColor(Color("Text"))
-                .padding(.bottom)
+            HStack {
+                Text("Ditt turnummer blir:")
+                    .foregroundColor(Color("Text"))
+                    .font(.title3)
+                Text("\(myQueueNumber)")
+                    .foregroundColor(Color("Text"))
+                    .font(.title3)
+                    .bold()
+            }
+            .padding(.bottom)
+
             NavigationLink(
                 destination: ContentView(resetScanner: $resetScanner, scannedUid: self.viewModel.lastQrCode, queueNumber: myQueueNumber), isActive: $codeScanned) {
                 Button(action: {
@@ -191,7 +199,9 @@ struct QrScanView: View {
                 }) {
                     HStack {
                         Text("Ställ dig i kö till")
+                            .foregroundColor(Color("Link"))
                         Text("\(shopName)")
+                            .foregroundColor(Color("Link"))
                             .bold()
                     }
                     .foregroundColor(Color("Link"))
